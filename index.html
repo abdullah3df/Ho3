@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>بداية التسبيح</title>
+<meta name="theme-color" content="#0f1c1a">
+<style>
+  :root{
+    --bg:#0e1716;--bg2:#0f201e;--card:#0f2321;--edge:#163b36;
+    --text:#eef8f6;--muted:#a8c9c2;--btn1:#1cc46f;--btn2:#0fa563;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{height:100%}
+  body{
+    margin:0;display:grid;place-items:center;background:
+      radial-gradient(1200px 600px at 10% -10%, #154d45 0%, transparent 60%),
+      radial-gradient(1000px 500px at 110% 10%, #0a3b35 0%, transparent 55%),
+      linear-gradient(180deg,var(--bg),var(--bg2));
+    color:var(--text);font-family:system-ui, -apple-system, "Segoe UI", Arial;
+  }
+  .wrap{width:min(96vw,840px);padding:24px}
+  .card{background:linear-gradient(180deg,#0f2422,var(--card));
+        border:1px solid var(--edge);border-radius:26px;padding:28px;
+        box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:center}
+  .bism{font-size:clamp(1.6rem,4vw,2rem);font-weight:900;margin:0 0 10px}
+  .ayah{color:var(--muted);font-size:clamp(1.1rem,3vw,1.25rem);margin:0 0 18px}
+  .btn{
+    display:inline-grid;place-items:center;gap:6px;grid-auto-flow:column;
+    padding:14px 26px;border-radius:14px;border:none;cursor:pointer;
+    color:#fff;background:linear-gradient(145deg,var(--btn1),var(--btn2));
+    font-weight:900;box-shadow:0 14px 30px rgba(31,214,128,.25), inset 0 1px 0 rgba(255,255,255,.12);
+  }
+  .btn:active{transform:translateY(1px)}
+  .fade-in{opacity:0;transform:translateY(8px);animation:fade .6s .2s forwards}
+  .fade-in.d2{animation-delay:.45s}
+  @keyframes fade{to{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1 class="bism fade-in">﷽</h1>
+      <p class="ayah fade-in d2">﴿ سَبِّحِ اسْمَ رَبِّكَ الأَعْلَى ﴾</p>
+      <button class="btn fade-in d2" onclick="location.href='tasbih.html'">ابدأ التسبيح</button>
+    </section>
+  </main>
+</body>
+</html>
