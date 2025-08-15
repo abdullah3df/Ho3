@@ -4,11 +4,11 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>Chick Coin (CIK) — Official Website</title>
-<meta name="description" content="Chick Coin (CIK) is a meme & community-driven token on BNB Smart Chain (BEP-20). Official website with contract, links, tokenomics, roadmap and whitepaper." />
+<meta name="description" content="Chick Coin (CIK) is a meme & community-driven token on BNB Smart Chain (BEP-20). Contract, links, tokenomics, roadmap and whitepaper." />
 <meta name="theme-color" content="#f5c84b" />
 <link rel="canonical" href="https://cikcoin.art/">
 
-<!-- Favicon & OG (use local logo; fallback below) -->
+<!-- Favicon & OG -->
 <link rel="icon" type="image/png" href="cik-logo.png" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Chick Coin (CIK) — Official Website" />
@@ -19,7 +19,7 @@
 
 <style>
   :root{
-    --bg:#fff9e6;          /* light yellow background */
+    --bg:#fff9e6;          /* light yellow brand background */
     --text:#1a1a1a;
     --muted:#5f6368;
     --brand:#f5c84b;
@@ -163,6 +163,7 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contract">Contract</a>
+      <a href="#ownership">Ownership</a>
       <a href="#tokenomics">Tokenomics</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#links">Links</a>
@@ -178,6 +179,7 @@
       <a href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#contract">Contract</a>
+      <a href="#ownership">Ownership</a>
       <a href="#tokenomics">Tokenomics</a>
       <a href="#roadmap">Roadmap</a>
       <a href="#links">Links</a>
@@ -238,6 +240,15 @@
     </div>
   </section>
 
+  <!-- OWNERSHIP -->
+  <section id="ownership">
+    <h2>Ownership</h2>
+    <div class="card">
+      <p><strong>Contract Ownership:</strong> Will be fully renounced after the upcoming update.</p>
+      <p class="subtitle" style="margin-top:6px">No tokens are allocated or reserved for the team. There is no team wallet or team liquidity allocation.</p>
+    </div>
+  </section>
+
   <!-- TOKENOMICS -->
   <section id="tokenomics">
     <h2>Tokenomics</h2>
@@ -256,10 +267,9 @@
         <table aria-label="Tokenomics table" id="tokoTable">
           <thead><tr><th>Allocation</th><th>Percent</th></tr></thead>
           <tbody>
-            <!-- EDIT these values to match your contract -->
-            <tr data-label="Liquidity" data-color="#f5c84b" data-value="60"><td>Liquidity</td><td>60%</td></tr>
+            <!-- EDIT these values to match your contract; no team row at all -->
+            <tr data-label="Liquidity" data-color="#f5c84b" data-value="70"><td>Liquidity</td><td>70%</td></tr>
             <tr data-label="Community" data-color="#ffb84b" data-value="30"><td>Community</td><td>30%</td></tr>
-            <tr data-label="Team" data-color="#ffd86a" data-value="10"><td>Team</td><td>10%</td></tr>
           </tbody>
         </table>
         <p class="subtitle" style="margin-top:6px">Update the percentages above to reflect your actual contract before submitting to explorers.</p>
@@ -376,7 +386,7 @@
     const timer = setInterval(tick, 1000);
   })();
 
-  // Donut chart from table rows
+  // Donut chart from table rows (no team slice)
   (function(){
     const table = document.querySelector('#tokoTable tbody');
     const g = document.getElementById('slices');
@@ -390,7 +400,7 @@
       const pct = (vals[i]/total);
       const len = c*pct;
       const dash = `${len} ${c-len}`;
-      const angle = (acc/total)*360 - 90; // start at top
+      const angle = (acc/total)*360 - 90;
       const color = r.dataset.color || '#ccc';
       const path = document.createElementNS('http://www.w3.org/2000/svg','circle');
       path.setAttribute('cx', cx); path.setAttribute('cy', cy); path.setAttribute('r', r);
@@ -444,4 +454,4 @@
   });
 </script>
 </body>
-</html>
+  </html>
