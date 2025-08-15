@@ -1,49 +1,328 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>بداية التسبيح</title>
-<meta name="theme-color" content="#0f1c1a">
-<style>
-  :root{
-    --bg:#0e1716;--bg2:#0f201e;--card:#0f2321;--edge:#163b36;
-    --text:#eef8f6;--muted:#a8c9c2;--btn1:#1cc46f;--btn2:#0fa563;
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chick Coin (CIK) – Official Website</title>
+  <meta name="description" content="CIK is a meme & community-driven token on BNB Smart Chain. Transparent, simple, and focused on viral community growth." />
+  <link rel="canonical" href="https://cikcoin.art/" />
+
+  <!-- Primary brand colors -->
+  <meta name="theme-color" content="#f5c84b" />
+
+  <!-- Open Graph / Twitter (uses embedded data image so previews always show something) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Chick Coin (CIK) – Official" />
+  <meta property="og:description" content="Meme & community-driven token on BNB Smart Chain (BEP-20)." />
+  <meta property="og:url" content="https://cikcoin.art/" />
+  <meta property="og:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAACk2H0NAAAAsUlEQVR42u3SMQEAIAwEsQv9v0T2QwCk0qkF2o7Q0wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPj1EwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKwQ9i0AAe5gXo4AAAAASUVORK5CYII=" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Chick Coin (CIK)" />
+  <meta name="twitter:description" content="Community-first meme token on BNB Smart Chain." />
+  <meta name="twitter:image" content="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQAAAAEACAQAAACk2H0NAAAAsUlEQVR42u3SMQEAIAwEsQv9v0T2QwCk0qkF2o7Q0wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAPj1EwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKwQ9i0AAe5gXo4AAAAASUVORK5CYII=" />
+
+  <!-- Favicon (SVG embedded) -->
+  <link rel="icon" type="image/svg+xml"
+        href='data:image/svg+xml;utf8,
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+          <rect width="32" height="32" rx="6" fill="%23fff6da"/>
+          <circle cx="16" cy="16" r="9" fill="%23f5c84b"/>
+          <circle cx="14" cy="14" r="1.1" fill="%231a1a1a"/>
+          <circle cx="18" cy="14" r="1.1" fill="%231a1a1a"/>
+          <path d="M12 18c2.3 1.8 5.7 1.8 8 0" stroke="%231a1a1a" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+          <path d="M20.5 11l3-1.2-1.2 3" fill="%23ff7b54"/>
+        </svg>' />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    :root{
+      --bg:#fff7dd;          /* أبيض مائل للصفار */
+      --bg-2:#fff1c7;
+      --text:#1a1a1a;
+      --muted:#4a4a4a;
+      --brand:#f5c84b;       /* أصفر العَلامة */
+      --brand-2:#ffdf70;
+      --card:#ffffff;
+      --ok:#17b26a;
+      --danger:#d92d20;
+      --radius:18px;
+      --shadow:0 10px 30px rgba(0,0,0,.08);
+      --shadow-sm:0 6px 16px rgba(0,0,0,.06);
+    }
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
+    body{
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+      background:
+        radial-gradient(1000px 400px at 80% -50%, var(--bg-2), transparent 70%),
+        radial-gradient(900px 300px at -20% 0%, var(--bg-2), transparent 60%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
+    }
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{
+      position:sticky;top:0;z-index:999;background:linear-gradient(180deg,#fffaf0,rgba(255,250,240,.85));
+      backdrop-filter:saturate(120%) blur(8px); border-bottom:1px solid rgba(0,0,0,.06)
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:14px}
+    .brand{display:flex;align-items:center;gap:12px;font-weight:800}
+    .brand .logo{width:34px;height:34px;display:inline-block;border-radius:10px;box-shadow:var(--shadow-sm)}
+    .brand span{font-size:1.05rem;letter-spacing:.3px}
+    .menu{display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+    .menu a{padding:8px 12px;border-radius:12px}
+    .menu a:hover{background:rgba(0,0,0,.06)}
+    .cta{background:var(--brand);padding:10px 14px;border-radius:14px;font-weight:700;box-shadow:var(--shadow-sm)}
+    .cta:hover{transform:translateY(-1px)}
+    .hero{display:grid;grid-template-columns:1.2fr .8fr;gap:26px;align-items:center;padding:48px 0}
+    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:22px}
+    .badge{display:inline-flex;align-items:center;gap:8px;background:#fff3b3;padding:8px 12px;border-radius:999px;font-weight:700}
+    .title{font-size:clamp(28px,4vw,44px);line-height:1.15;margin:14px 0 8px}
+    .subtitle{color:var(--muted);max-width:680px}
+    .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .pill{display:inline-flex;gap:8px;align-items:center;background:#fff7cc;border:1px solid #ffe79f;padding:8px 12px;border-radius:12px;font-weight:600}
+    .muted{color:var(--muted)}
+    code.addr{background:#0f172a;color:#fff;padding:8px 10px;border-radius:10px;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono",monospace}
+    .actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px}
+    .btn{display:inline-flex;align-items:center;gap:10px;padding:12px 14px;border-radius:14px;background:#111;color:#fff;font-weight:700;box-shadow:var(--shadow-sm)}
+    .btn.alt{background:#fff;border:1px solid rgba(0,0,0,.08);color:#111}
+    .btn.alt:hover{background:#fffef4}
+    .section{padding:38px 0}
+    .section h2{margin:0 0 10px;font-size:clamp(20px,2.6vw,28px)}
+    .list{display:grid;gap:10px}
+    .row{display:flex;align-items:center;gap:12px;justify-content:space-between}
+    .tag{font-size:.85rem;background:#fff4bf;padding:6px 10px;border-radius:999px}
+    .team{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .member{padding:18px;border-radius:16px;background:var(--card);box-shadow:var(--shadow-sm);display:flex;gap:12px;align-items:center}
+    .avatar{width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #ffe08a, #f5c84b);display:grid;place-items:center;font-weight:800}
+    .footer{padding:24px 0 50px;color:#555}
+    .social{display:flex;gap:10px;flex-wrap:wrap}
+    .social a{background:#fff;border:1px solid rgba(0,0,0,.08);padding:8px 12px;border-radius:12px}
+    .ok{color:var(--ok)} .danger{color:var(--danger)}
+    @media (max-width:920px){
+      .hero{grid-template-columns:1fr}
+      .grid-3,.team,.grid-2{grid-template-columns:1fr}
+    }
+  </style>
+
+  <!-- Structured data for credibility -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Chick Coin (CIK)",
+    "url":"https://cikcoin.art/",
+    "logo":"https://cikcoin.art/",
+    "sameAs":[
+      "https://x.com/cik_coin",
+      "https://t.me/+X6yJR7h_Lp81YWI6"
+    ],
+    "email":"info.cik@cikcoin.art"
   }
-  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
-  html,body{height:100%}
-  body{
-    margin:0;display:grid;place-items:center;background:
-      radial-gradient(1200px 600px at 10% -10%, #154d45 0%, transparent 60%),
-      radial-gradient(1000px 500px at 110% 10%, #0a3b35 0%, transparent 55%),
-      linear-gradient(180deg,var(--bg),var(--bg2));
-    color:var(--text);font-family:system-ui, -apple-system, "Segoe UI", Arial;
-  }
-  .wrap{width:min(96vw,840px);padding:24px}
-  .card{background:linear-gradient(180deg,#0f2422,var(--card));
-        border:1px solid var(--edge);border-radius:26px;padding:28px;
-        box-shadow:0 24px 60px rgba(0,0,0,.45);text-align:center}
-  .bism{font-size:clamp(1.6rem,4vw,2rem);font-weight:900;margin:0 0 10px}
-  .ayah{color:var(--muted);font-size:clamp(1.1rem,3vw,1.25rem);margin:0 0 18px}
-  .btn{
-    display:inline-grid;place-items:center;gap:6px;grid-auto-flow:column;
-    padding:14px 26px;border-radius:14px;border:none;cursor:pointer;
-    color:#fff;background:linear-gradient(145deg,var(--btn1),var(--btn2));
-    font-weight:900;box-shadow:0 14px 30px rgba(31,214,128,.25), inset 0 1px 0 rgba(255,255,255,.12);
-  }
-  .btn:active{transform:translateY(1px)}
-  .fade-in{opacity:0;transform:translateY(8px);animation:fade .6s .2s forwards}
-  .fade-in.d2{animation-delay:.45s}
-  @keyframes fade{to{opacity:1;transform:none}}
-</style>
+  </script>
 </head>
 <body>
-  <main class="wrap">
-    <section class="card">
-      <h1 class="bism fade-in">﷽</h1>
-      <p class="ayah fade-in d2">﴿ سَبِّحِ اسْمَ رَبِّكَ الأَعْلَى ﴾</p>
-      <button class="btn fade-in d2" onclick="location.href='tasbih.html'">ابدأ التسبيح</button>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Chick Coin home">
+        <span class="logo" aria-hidden="true"
+          style="background:
+            url('data:image/svg+xml;utf8,<?xml version=&quot;1.0&quot;?><svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 32 32%22><rect width=%2232%22 height=%2232%22 rx=%226%22 fill=%22%23fff6da%22/><circle cx=%2216%22 cy=%2216%22 r=%229%22 fill=%22%23f5c84b%22/><circle cx=%2214%22 cy=%2214%22 r=%221.1%22 fill=%22%231a1a1a%22/><circle cx=%2218%22 cy=%2214%22 r=%221.1%22 fill=%22%231a1a1a%22/><path d=%22M12 18c2.3 1.8 5.7 1.8 8 0%22 stroke=%22%231a1a1a%22 stroke-width=%221.3%22 fill=%22none%22 stroke-linecap=%22round%22/><path d=%22M20.5 11l3-1.2-1.2 3%22 fill=%22%23ff7b54%22/></svg>') center/cover no-repeat;"></span>
+        <span>Chick&nbsp;Coin <span class="muted">(CIK)</span></span>
+      </a>
+      <nav class="menu" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#contract">Contract</a>
+        <a href="#links">Links</a>
+        <a href="#team">Team</a>
+        <a class="cta" href="https://pancakeswap.finance/swap?outputCurrency=0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">Buy on PancakeSwap</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- HERO -->
+    <section class="hero">
+      <div>
+        <span class="badge">BNB Smart Chain • BEP-20</span>
+        <h1 class="title">Memes hatch communities 🐣</h1>
+        <p class="subtitle">
+          <strong>Chick Coin (CIK)</strong> is a meme & community-driven token on BNB Smart Chain.
+          No promises, no financial advice — just transparent vibes and a growing flock.
+        </p>
+        <div class="actions">
+          <a class="btn" href="https://bscscan.com/token/0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">View on BscScan</a>
+          <a class="btn alt" href="https://cikcoin.art/Chick_Coin_Whitepaper_Pro.pdf" target="_blank" rel="noopener">Whitepaper (PDF)</a>
+        </div>
+      </div>
+
+      <!-- Right card -->
+      <div class="card">
+        <h3 style="margin:0 0 12px">Quick facts</h3>
+        <div class="grid-2">
+          <div class="list">
+            <div class="row"><span class="tag">Chain</span><span>BNB Smart Chain</span></div>
+            <div class="row"><span class="tag">Standard</span><span>BEP-20</span></div>
+            <div class="row"><span class="tag">Ticker</span><span>CIK</span></div>
+          </div>
+          <div class="list">
+            <div class="row"><span class="tag">Tax</span><span>0% (per current contract)</span></div>
+            <div class="row"><span class="tag">Utility</span><span>None (meme/community)</span></div>
+            <div class="row"><span class="tag">Status</span><span class="ok">Live</span></div>
+          </div>
+        </div>
+        <div id="contract" class="section" style="padding:18px 0 0">
+          <div class="muted" style="margin-bottom:6px">Contract address</div>
+          <code class="addr" id="addr">0x182976fac92c6282c4afa9f63b3ff52f8e54570d</code>
+          <div class="actions">
+            <button class="btn" id="copyBtn" type="button">Copy</button>
+            <a class="btn alt" href="https://pancakeswap.finance/swap?outputCurrency=0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">Buy CIK</a>
+          </div>
+          <p class="muted" style="margin-top:10px;font-size:.9rem">
+            Always verify the address on BscScan before trading.
+          </p>
+        </div>
+      </div>
     </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section">
+      <div class="card">
+        <h2>About Chick Coin</h2>
+        <p>
+          CIK is a light-hearted experiment in internet culture. The project has <strong>no inherent utility</strong> and
+          focuses on community engagement, social content, and open participation. Holders should not expect profits
+          from others’ efforts. This website and the project do not constitute investment advice.
+        </p>
+        <div class="actions" style="margin-top:6px">
+          <span class="pill">Transparent • Simple • Community-first</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- LINKS -->
+    <section id="links" class="section">
+      <div class="grid-3">
+        <div class="card">
+          <h3 style="margin-top:0">Official Channels</h3>
+          <div class="social">
+            <a href="https://x.com/cik_coin" target="_blank" rel="noopener" aria-label="X (Twitter)">X (Twitter)</a>
+            <a href="https://t.me/+X6yJR7h_Lp81YWI6" target="_blank" rel="noopener" aria-label="Telegram">Telegram</a>
+            <a href="mailto:info.cik@cikcoin.art" aria-label="Email">Email</a>
+            <a href="https://bscscan.com/token/0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener" aria-label="BscScan">BscScan</a>
+          </div>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Resources</h3>
+          <ul class="list" style="padding-left:18px;margin:0">
+            <li><a href="https://cikcoin.art/Chick_Coin_Whitepaper_Pro.pdf" target="_blank" rel="noopener">Whitepaper (PDF)</a></li>
+            <li><a id="downloadLogo" href="#" download="cik-32x32.svg">Download 32×32 SVG logo</a></li>
+            <li><a href="https://pancakeswap.finance/swap?outputCurrency=0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">Trade on PancakeSwap</a></li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3 style="margin-top:0">Disclaimers</h3>
+          <ul class="list" style="padding-left:18px;margin:0">
+            <li>CIK is a meme/community token with no guarantees.</li>
+            <li>Do your own research. Never invest more than you can afford to lose.</li>
+            <li>We do not promise future utility or returns.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="section">
+      <div class="card">
+        <h2>Team</h2>
+        <div class="team">
+          <div class="member">
+            <div class="avatar">A</div>
+            <div>
+              <div style="font-weight:700">Abdullah Khatm</div>
+              <div class="muted">Founder & Project Lead</div>
+              <div class="social" style="margin-top:6px">
+                <a href="https://x.com/abdullahkatm" target="_blank" rel="noopener">X</a>
+                <a href="https://www.linkedin.com" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
+          </div>
+          <!-- يمكنك إضافة أعضاء آخرين هنا -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ROADMAP (optional simple) -->
+    <section class="section">
+      <div class="card">
+        <h2>Roadmap (simple)</h2>
+        <div class="grid-3">
+          <div>
+            <h4>Phase 1</h4>
+            <p>Launch website & socials, submit token info to explorers.</p>
+          </div>
+          <div>
+            <h4>Phase 2</h4>
+            <p>Community growth & memes. Partnerships & campaigns.</p>
+          </div>
+          <div>
+            <h4>Phase 3</h4>
+            <p>Explore utility ideas with community voting (no promises).</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer container">
+      <div class="row">
+        <div>© <span id="year"></span> Chick Coin (CIK). All rights reserved.</div>
+        <div class="muted">Contact: <a href="mailto:info.cik@cikcoin.art">info.cik@cikcoin.art</a></div>
+      </div>
+    </footer>
   </main>
+
+  <script>
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Copy contract
+    const copyBtn = document.getElementById('copyBtn');
+    copyBtn?.addEventListener('click', async () => {
+      const addr = document.getElementById('addr').textContent.trim();
+      try {
+        await navigator.clipboard.writeText(addr);
+        copyBtn.textContent = 'Copied ✔';
+        setTimeout(()=> copyBtn.textContent = 'Copy', 1400);
+      } catch(e){
+        alert('Copy failed: ' + e);
+      }
+    });
+
+    // Build a clean 32x32 SVG logo and offer it as a download (hosted inline)
+    const svg32 = `
+      <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+        <rect width="32" height="32" rx="6" fill="#fff6da"/>
+        <circle cx="16" cy="16" r="9" fill="#f5c84b"/>
+        <circle cx="14" cy="14" r="1.1" fill="#1a1a1a"/>
+        <circle cx="18" cy="14" r="1.1" fill="#1a1a1a"/>
+        <path d="M12 18c2.3 1.8 5.7 1.8 8 0" stroke="#1a1a1a" stroke-width="1.3" fill="none" stroke-linecap="round"/>
+        <path d="M20.5 11l3-1.2-1.2 3" fill="#ff7b54"/>
+      </svg>`;
+    const dataUri = 'data:image/svg+xml;charset=UTF-8,' + encodeURIComponent(svg32);
+    const dl = document.getElementById('downloadLogo');
+    if (dl){ dl.href = dataUri; }
+
+    // If you later upload the logo as a real file, replace the above with:
+    // <link rel="icon" href="/logo.svg"> and use that path in BscScan form.
+  </script>
 </body>
 </html>
