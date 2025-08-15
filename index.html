@@ -1,276 +1,226 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Chick Coin (CIK) — الموقع الرسمي</title>
-  <meta name="description" content="CIK توكن ميم مجتمعي على BNB Smart Chain (BEP-20). هذه الصفحة الرسمية تتضمن العقد والروابط والورقة البيضاء.">
+  <title>Chick Coin (CIK) — Official Website</title>
+  <meta name="description" content="Chick Coin (CIK) is a meme & community-driven token on BNB Smart Chain (BEP-20). Official website with contract, links, and resources.">
   <link rel="canonical" href="https://cikcoin.art/">
-  <meta name="theme-color" content="#f5c84b">
+  <meta name="theme-color" content="#f5c84b" />
 
-  <!-- استبدل المسارات إذا وضعت الشعار في مكان آخر -->
+  <!-- Favicon & OG -->
   <link rel="icon" type="image/png" href="/assets/cik-logo.png" />
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Chick Coin (CIK) — الموقع الرسمي">
-  <meta property="og:description" content="توكن ميم مجتمعي على BNB Smart Chain (BEP-20).">
-  <meta property="og:url" content="https://cikcoin.art/">
-  <meta property="og:image" content="/assets/cik-logo.png">
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="/assets/cik-logo.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Chick Coin (CIK) — Official Website" />
+  <meta property="og:description" content="Meme & community-driven token on BNB Smart Chain (BEP-20)." />
+  <meta property="og:url" content="https://cikcoin.art/" />
+  <meta property="og:image" content="/assets/cik-logo.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="/assets/cik-logo.png" />
 
   <style>
-    :root{
-      --bg:#fff8dd;          /* أبيض مائل للصفار */
-      --bg-2:#fff2c7;
-      --text:#181818;
-      --muted:#5a5a5a;
-      --brand:#f5c84b;       /* أصفر الشعار */
-      --card:#ffffff;
-      --radius:16px;
-      --shadow:0 10px 26px rgba(0,0,0,.06);
-      --shadow-sm:0 6px 16px rgba(0,0,0,.05);
+    :root {
+      --bg: #fff8dd;
+      --brand: #f5c84b;
+      --text: #181818;
+      --muted: #5a5a5a;
+      --radius: 14px;
+      --shadow: 0 8px 20px rgba(0,0,0,0.08);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0}
-    body{
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Noto Sans Arabic", "Tahoma", Arial, sans-serif;
-      background:
-        radial-gradient(820px 260px at 85% -10%, var(--bg-2), transparent 60%),
-        radial-gradient(640px 220px at -10% 0%, var(--bg-2), transparent 55%),
-        var(--bg);
-      color:var(--text);
-      line-height:1.7;
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
     }
-    a{color:inherit;text-decoration:none}
-    img{max-width:100%;display:block}
-
-    .wrap{max-width:1080px;margin:auto;padding:14px}
-    header{
-      position:sticky;top:0;z-index:10;
-      background:rgba(255,250,230,.9);
+    a { text-decoration: none; color: inherit; }
+    header {
+      position: fixed; top: 0; left: 0; right: 0;
+      background: rgba(255,250,230,0.95);
       backdrop-filter: blur(8px);
-      border-bottom:1px solid rgba(0,0,0,.06);
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 10px 20px; box-shadow: var(--shadow); z-index: 1000;
     }
-
-    .nav{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:10px 0}
-    .brand{display:flex;align-items:center;gap:10px}
-    .brand .logo{
-      width:44px;height:44px;border-radius:12px;background:#fff;display:grid;place-items:center;
-      box-shadow:var(--shadow-sm);overflow:hidden
+    .logo { display: flex; align-items: center; gap: 8px; font-weight: 800; }
+    .logo img { width: 38px; height: 38px; border-radius: var(--radius); }
+    nav { display: flex; gap: 16px; }
+    nav a { padding: 6px 10px; border-radius: var(--radius); font-weight: 600; }
+    nav a:hover { background: rgba(0,0,0,0.06); }
+    .menu-toggle { display: none; font-size: 24px; cursor: pointer; }
+    .mobile-menu {
+      position: fixed; top: 0; right: -260px; width: 240px; height: 100%;
+      background: #fff; box-shadow: var(--shadow);
+      padding: 20px; transition: right 0.3s ease;
+      display: flex; flex-direction: column; gap: 14px;
     }
-    .brand .logo img{width:100%;height:100%;object-fit:contain;background:#000;border-radius:12px}
-    .brand .t{font-weight:800}
-    .brand .s{color:var(--muted);font-weight:600}
-
-    .menu{display:flex;gap:8px;align-items:center}
-    .menu a{padding:8px 12px;border-radius:12px}
-    .menu a:hover{background:rgba(0,0,0,.06)}
-    .cta{background:#111;color:#fff;border-radius:12px;padding:10px 14px;font-weight:700}
-
-    /* موبايل-فرست */
-    .hero{display:grid;gap:14px;margin:14px 0}
-    .card{background:var(--card);border-radius:var(--radius);box-shadow:var(--shadow);padding:16px}
-    .badge{display:inline-flex;gap:6px;align-items:center;background:#fff3b3;border:1px solid #ffe59d;padding:6px 10px;border-radius:999px;font-weight:700}
-    h1{font-size:clamp(22px,5.2vw,40px);margin:8px 0}
-    .subtitle{color:var(--muted);margin-top:6px}
-
-    .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:12px}
-    .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 14px;border-radius:12px;background:#111;color:#fff;font-weight:700}
-    .btn.alt{background:#fff;border:1px solid rgba(0,0,0,.12);color:#111}
-    .btn.alt:hover{background:#fffef3}
-
-    .facts{display:grid;gap:10px}
-    .row{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#fffdf2;border:1px solid #ffe39a;padding:10px;border-radius:12px}
-    .tag{font-weight:700;background:#fff6bf;padding:4px 10px;border-radius:999px}
-
-    code.addr{
-      display:block;overflow:auto;white-space:nowrap;
-      background:#0f172a;color:#fff;padding:10px;border-radius:10px;font-family:ui-monospace,monospace
+    .mobile-menu.active { right: 0; }
+    section { padding: 90px 20px 40px; max-width: 1100px; margin: auto; }
+    h1, h2, h3 { margin-bottom: 10px; }
+    .subtitle { color: var(--muted); }
+    .btn {
+      display: inline-block; padding: 10px 16px;
+      border-radius: var(--radius); font-weight: 700;
+      background: #111; color: #fff; box-shadow: var(--shadow);
+      transition: transform 0.2s;
     }
-
-    .section{margin:18px 0}
-    .grid{display:grid;gap:12px}
-    .link-list{list-style:none;padding:0;margin:0;display:grid;gap:8px}
-    .link-list a{background:#fff;border:1px solid rgba(0,0,0,.06);padding:10px;border-radius:12px}
-
-    .muted{color:var(--muted)}
-    .team{display:grid;gap:12px}
-    .member{display:flex;gap:10px;align-items:center;background:#fff;border-radius:14px;padding:12px;box-shadow:var(--shadow-sm)}
-    .avatar{width:54px;height:54px;border-radius:50%;background:radial-gradient(circle at 30% 30%, #ffe08a, #f5c84b);display:grid;place-items:center;font-weight:800}
-
-    footer{padding:20px 0 40px;color:#555}
-    .foot{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap}
-
-    /* شاشات أكبر */
-    @media (min-width:860px){
-      .hero{grid-template-columns:1.2fr .8fr;align-items:center}
-      .grid.cols-3{grid-template-columns:repeat(3,1fr)}
-      .grid.cols-2{grid-template-columns:repeat(2,1fr)}
-      .team{grid-template-columns:repeat(3,1fr)}
+    .btn:hover { transform: translateY(-2px); }
+    .btn.alt {
+      background: #fff; color: #111;
+      border: 1px solid rgba(0,0,0,0.1);
+    }
+    code.addr {
+      background: #0f172a; color: #fff;
+      padding: 8px 10px; border-radius: var(--radius);
+      display: block; margin: 8px 0; overflow-x: auto;
+    }
+    .grid { display: grid; gap: 16px; }
+    .grid.cols-3 { grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); }
+    .card {
+      background: #fff; border-radius: var(--radius);
+      padding: 16px; box-shadow: var(--shadow);
+      opacity: 0; transform: translateY(30px);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+    .card.visible { opacity: 1; transform: translateY(0); }
+    footer {
+      padding: 20px; text-align: center; color: var(--muted);
+      font-size: 14px;
+    }
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .menu-toggle { display: block; }
     }
   </style>
-
-  <!-- Structured data لزيادة المصداقية (بدون أسماء شخصية) -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Chick Coin (CIK)",
-    "url":"https://cikcoin.art/",
-    "logo":"https://cikcoin.art/assets/cik-logo.png",
-    "sameAs":[
-      "https://x.com/cik_coin",
-      "https://t.me/+X6yJR7h_Lp81YWI6"
-    ],
-    "email":"info.cik@cikcoin.art"
-  }
-  </script>
 </head>
 <body>
   <header>
-    <div class="wrap nav">
-      <div class="brand">
-        <div class="logo">
-          <img src="/assets/cik-logo.png" alt="CIK logo"
-               onerror="this.style.background='#fff6da';this.style.border='1px solid #ffe39a'">
-        </div>
-        <div>
-          <div class="t">Chick Coin <span class="s">(CIK)</span></div>
-          <div class="s" style="font-size:.9rem">BEP-20 • BNB Smart Chain</div>
-        </div>
-      </div>
-      <nav class="menu" aria-label="الرئيسية">
-        <a href="#about">حول</a>
-        <a href="#contract">العقد</a>
-        <a href="#links">روابط</a>
-        <a href="#team">الفريق</a>
-        <a class="cta" href="https://pancakeswap.finance/swap?outputCurrency=0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">شراء</a>
-      </nav>
+    <div class="logo">
+      <img src="/assets/cik-logo.png" alt="CIK logo" />
+      Chick Coin <span style="color:var(--muted);">(CIK)</span>
+    </div>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contract">Contract</a>
+      <a href="#links">Links</a>
+      <a href="#team">Team</a>
+      <a href="#resources">Resources</a>
+    </nav>
+    <div class="menu-toggle" id="menuToggle">☰</div>
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#contract">Contract</a>
+      <a href="#links">Links</a>
+      <a href="#team">Team</a>
+      <a href="#resources">Resources</a>
     </div>
   </header>
 
-  <main class="wrap">
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div>
-        <span class="badge">شفافية • مجتمع</span>
-        <h1>ميمز تفقّس مجتمعًا 🐣</h1>
-        <p class="subtitle">
-          <strong>CIK</strong> توكن ميم مجتمعي على BNB Smart Chain. لا وعود ولا نصائح استثمارية — تركيزنا على المحتوى والتفاعل.
-        </p>
-        <div class="actions">
-          <a class="btn" href="https://bscscan.com/token/0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">BscScan</a>
-          <a class="btn alt" href="/Chick_Coin_Whitepaper_Pro.pdf" target="_blank" rel="noopener">الورقة البيضاء</a>
-        </div>
-      </div>
+  <section id="home">
+    <h1>Memes hatch communities 🐣</h1>
+    <p class="subtitle">Chick Coin (CIK) is a meme & community-driven token on BNB Smart Chain. No promises — just transparent vibes and growth by the flock.</p>
+    <div style="margin-top:14px;">
+      <a class="btn" href="https://bscscan.com/token/0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank">View on BscScan</a>
+      <a class="btn alt" href="/Chick_Coin_Whitepaper_Pro.pdf" target="_blank">Whitepaper</a>
+    </div>
+  </section>
 
-      <div class="card">
-        <h3 style="margin:0 0 10px">معلومات سريعة</h3>
-        <div class="facts">
-          <div class="row"><span class="tag">السلسلة</span><span>BNB Smart Chain</span></div>
-          <div class="row"><span class="tag">المعيار</span><span>BEP-20</span></div>
-          <div class="row"><span class="tag">الرمز</span><span>CIK</span></div>
-          <div class="row"><span class="tag">الضريبة</span><span>0% (حسب العقد الحالي)</span></div>
-          <div class="row"><span class="tag">الفائدة</span><span>لا يوجد (ميم/مجتمع)</span></div>
-        </div>
+  <section id="about">
+    <h2>About Chick Coin</h2>
+    <div class="card">
+      <p>CIK is a light-hearted experiment in internet culture. The project has no inherent utility and focuses on community engagement, social content, and open participation.</p>
+    </div>
+  </section>
 
-        <div id="contract" class="section">
-          <div class="muted" style="margin-bottom:6px">عنوان العقد</div>
-          <code class="addr" id="addr">0x182976fac92c6282c4afa9f63b3ff52f8e54570d</code>
-          <div class="actions">
-            <button class="btn" id="copyBtn" type="button">نسخ العنوان</button>
-            <a class="btn alt" href="https://pancakeswap.finance/swap?outputCurrency=0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">شراء CIK</a>
-          </div>
-          <p class="muted" style="margin-top:8px;font-size:.9rem">تأكّد دائمًا من العنوان على BscScan قبل التداول.</p>
-        </div>
-      </div>
-    </section>
+  <section id="contract">
+    <h2>Contract Address</h2>
+    <div class="card">
+      <code class="addr" id="addr">0x182976fac92c6282c4afa9f63b3ff52f8e54570d</code>
+      <button class="btn" id="copyBtn">Copy</button>
+    </div>
+  </section>
 
-    <!-- ABOUT -->
-    <section id="about" class="section">
-      <div class="card">
-        <h2 style="margin-top:0">عن المشروع</h2>
-        <p>
-          CIK تجربة ممتعة تعتمد على ثقافة الإنترنت والمحتوى الفيروسي. المشروع لا يَعِد بفائدة مستقبلية
-          ويركّز على تفاعل المجتمع. هذا الموقع لا يُعد نصيحة استثمارية.
-        </p>
-      </div>
-    </section>
+  <section id="links">
+    <h2>Official Links</h2>
+    <div class="grid cols-3">
+      <div class="card"><a href="https://x.com/cik_coin" target="_blank">Twitter</a></div>
+      <div class="card"><a href="https://t.me/+X6yJR7h_Lp81YWI6" target="_blank">Telegram</a></div>
+      <div class="card"><a href="mailto:info.cik@cikcoin.art">Email</a></div>
+    </div>
+  </section>
 
-    <!-- LINKS -->
-    <section id="links" class="section">
-      <div class="grid cols-3">
-        <div class="card">
-          <h3 style="margin:0 0 8px">القنوات الرسمية</h3>
-          <ul class="link-list">
-            <li><a href="https://x.com/cik_coin" target="_blank" rel="noopener">X (تويتر)</a></li>
-            <li><a href="https://t.me/+X6yJR7h_Lp81YWI6" target="_blank" rel="noopener">تيليجرام</a></li>
-            <li><a href="mailto:info.cik@cikcoin.art">البريد الرسمي</a></li>
-            <li><a href="https://bscscan.com/token/0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">BscScan</a></li>
-          </ul>
-        </div>
+  <section id="team">
+    <h2>Team</h2>
+    <div class="card">
+      <p>The team prefers privacy and works publicly via the official channels provided above.</p>
+    </div>
+  </section>
 
-        <div class="card">
-          <h3 style="margin:0 0 8px">مواد</h3>
-          <ul class="link-list">
-            <li><a href="/Chick_Coin_Whitepaper_Pro.pdf" target="_blank" rel="noopener">الورقة البيضاء (PDF)</a></li>
-            <li><a id="dlPng32" href="#" download="cik-32x32.png">تحميل 32×32 PNG</a></li>
-            <li><a id="dlSvg32" href="#" download="cik-32x32.svg">تحميل 32×32 SVG (لبلوك إكسبلورر)</a></li>
-            <li><a href="https://pancakeswap.finance/swap?outputCurrency=0x182976fac92c6282c4afa9f63b3ff52f8e54570d" target="_blank" rel="noopener">التداول على PancakeSwap</a></li>
-          </ul>
-        </div>
+  <section id="resources">
+    <h2>Resources</h2>
+    <div class="grid cols-3">
+      <div class="card"><a href="/Chick_Coin_Whitepaper_Pro.pdf" target="_blank">Whitepaper</a></div>
+      <div class="card"><a id="dlPng32" href="#">Download 32×32 PNG</a></div>
+      <div class="card"><a id="dlSvg32" href="#">Download 32×32 SVG</a></div>
+    </div>
+  </section>
 
-        <div class="card">
-          <h3 style="margin:0 0 8px">تنبيه</h3>
-          <ul class="link-list">
-            <li>CIK توكن ميم مجتمعي بلا ضمانات.</li>
-            <li>قم ببحثك الخاص (DYOR).</li>
-            <li>لا تستثمر أكثر مما يمكنك تحمّل خسارته.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <!-- TEAM (بدون أسماء شخصية) -->
-    <section id="team" class="section">
-      <div class="card">
-        <h2 style="margin-top:0">الفريق</h2>
-        <p class="muted" style="margin:0">
-          فريق صغير يفضّل الخصوصية ويعمل علنًا عبر القنوات الرسمية أعلاه. الشفافية في العناوين والعقد والروابط مقدّمة هنا.
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <div class="wrap foot">
-        <div>© <span id="y"></span> Chick Coin (CIK).</div>
-        <div class="muted">تواصل: <a href="mailto:info.cik@cikcoin.art">info.cik@cikcoin.art</a></div>
-      </div>
-    </footer>
-  </main>
+  <footer>
+    © <span id="year"></span> Chick Coin (CIK). All rights reserved.
+  </footer>
 
   <script>
-    // سنة ديناميكية
-    document.getElementById('y').textContent = new Date().getFullYear();
-
-    // نسخ العنوان
+    // Year
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Mobile menu toggle
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuToggle.addEventListener('click', () => mobileMenu.classList.toggle('active'));
+    // Copy contract
     document.getElementById('copyBtn').addEventListener('click', async () => {
-      const v = document.getElementById('addr').textContent.trim();
-      try{
-        await navigator.clipboard.writeText(v);
-        const b = document.getElementById('copyBtn');
-        b.textContent = 'تم النسخ ✔';
-        setTimeout(()=> b.textContent = 'نسخ العنوان', 1400);
-      }catch(e){ alert('تعذّر النسخ: '+e); }
+      try {
+        await navigator.clipboard.writeText(document.getElementById('addr').textContent.trim());
+        alert('Address copied!');
+      } catch (e) { alert('Copy failed'); }
     });
-
-    // --- مولّد أصول 32×32 من الشعار الأصلي (على نفس الدومين) ---
-    async function loadLogoToCanvas(size=32){
+    // Animation on scroll
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('visible');
+      });
+    }, { threshold: 0.2 });
+    document.querySelectorAll('.card').forEach(card => observer.observe(card));
+    // Logo generators
+    async function loadLogoCanvas(size=32){
       return new Promise((resolve,reject)=>{
         const img = new Image();
-        img.crossOrigin = 'anonymous';
-        img.onload = () => {
-          const c = document.createElement('canvas');
-          c.width = size; c.height = size;
-          const ctx = c.getContext('2d');
-          ctx.imageSmoothingEnabled
+        img.onload = ()=>{
+          const c = document.createElement('canvas'); c.width=size; c.height=size;
+          const ctx = c.getContext('2d'); ctx.clearRect(0,0,size,size);
+          const ratio = Math.min(size/img.width,size/img.height);
+          const w = img.width*ratio, h = img.height*ratio;
+          ctx.drawImage(img,(size-w)/2,(size-h)/2,w,h);
+          resolve(c);
+        };
+        img.onerror=reject;
+        img.src='/assets/cik-logo.png';
+      });
+    }
+    document.getElementById('dlPng32').addEventListener('click', async e=>{
+      e.preventDefault(); const c = await loadLogoCanvas();
+      const a=document.createElement('a'); a.href=c.toDataURL('image/png');
+      a.download='cik-32x32.png'; a.click();
+    });
+    document.getElementById('dlSvg32').addEventListener('click', async e=>{
+      e.preventDefault(); const c = await loadLogoCanvas();
+      const pngData=c.toDataURL('image/png').split(',')[1];
+      const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><image width="32" height="32" href="data:image/png;base64,${pngData}"/></svg>`;
+      const blob=new Blob([svg],{type:'image/svg+xml'}); const url=URL.createObjectURL(blob);
+      const a=document.createElement('a'); a.href=url; a.download='cik-32x32.svg'; a.click(); URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
